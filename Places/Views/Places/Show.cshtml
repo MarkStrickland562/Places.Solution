@@ -1,0 +1,6 @@
+@using Places.Models;
+
+<h2>@Model.GetCityName()</h2>
+
+You have traveled to @Model.GetCityName() for @Model.GetDuration() with @Model.GetCompanion(). <a href="@Model.GetPhoto()">Here's the photo album.</a> Your notes :
+@Model.GetJournalEntry()

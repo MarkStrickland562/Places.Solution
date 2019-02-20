@@ -11,7 +11,9 @@
 {
   @foreach (Place item in Model)
   {
-    <li> You have traveled to @item.GetCityName() for @item.GetDuration() with @item.GetCompanion(). <a href="@item.GetPhoto()">Here's the photo album.</a> Your notes : <br> @item.GetJournalEntry() </li>
+    <li>
+      <a href='/places/@item.GetId()'>@item.GetCityName()</a>
+    </li>
   }
 }
 

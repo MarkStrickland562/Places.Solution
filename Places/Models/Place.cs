@@ -5,6 +5,7 @@ namespace Places.Models
   {
     private string _myCityName;
     private static List<Place> _instances = new List<Place> {};
+    private int _id;
     private string _myPhoto;
     private string _myDuration;
     private string _myCompanion;
@@ -16,6 +17,7 @@ namespace Places.Models
     {
       _myCityName = myCityName;
       _instances.Add(this);
+      _id = _instances.Count;
       _myPhoto = myPhoto;
       _myDuration = myDuration;
       _myCompanion = myCompanion;
@@ -42,6 +44,16 @@ namespace Places.Models
     public static List<Place> GetAll()
     {
       return _instances;
+    }
+
+    public int GetId()
+    {
+      return _id;
+    }
+
+    public static Place Find(int searchId)
+    {
+      return _instances[searchId-1];
     }
 
   }
